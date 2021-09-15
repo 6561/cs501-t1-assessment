@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://cs501a1-api-heroku.herokuapp.com/auth/register'
+url = 'http://127.0.0.1:8000/auth/register'
 obj = {
     'email':'her@oku.com',
     'password':'YeahHerokuuu',

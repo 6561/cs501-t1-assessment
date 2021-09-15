@@ -24,19 +24,21 @@ app = Flask(__name__)
 
 app_settings = os.getenv(
     'APP_SETTINGS',
-    'project.server.config.DevelopmentConfig'
+    'project.server.config.ProductionConfig'
 )
 app.config.from_object(app_settings)
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+db.create_all()
+db.session.commit()
 
 from project.server.models import User
 migrate = Migrate(app, db)
 
 @app.route("/")
 def root_site():
-    return "<p>It works!</p>"
+    return "<p>It works! Welcome!</p>"
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
