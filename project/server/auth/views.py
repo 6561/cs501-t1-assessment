@@ -4,6 +4,9 @@ from flask.views import MethodView
 from project.server import bcrypt, db
 from project.server.models import User
 
+import jwt
+import json
+
 auth_blueprint = Blueprint('auth', __name__)
 
 class RegisterAPI(MethodView):
@@ -20,16 +23,17 @@ class RegisterAPI(MethodView):
 
     def post(self):
         # get the post data
-        post_data = request.get_json(); print(request)
+        post_data = request.get_json();
+        print(request);
         # check if user already exists
         user = User.query.filter_by(email=post_data.get('email')).first()
         if not user:
+            print("heeeeeeere")
             try:
                 user = User(
                     email=post_data.get('email'),
                     password=post_data.get('password')
                 )
-
                 # insert the user
                 db.session.add(user)
                 db.session.commit()
@@ -38,8 +42,9 @@ class RegisterAPI(MethodView):
                 responseObject = {
                     'status': 'success',
                     'message': 'Successfully registered.',
-                    'auth_token': auth_token.decode()
+                    'auth_token': user.decode_auth_token(auth_token)
                 }
+           
                 return make_response(jsonify(responseObject)), 201
             except Exception as e:
                 responseObject = {
@@ -54,13 +59,35 @@ class RegisterAPI(MethodView):
             }
             return make_response(jsonify(responseObject)), 202
 
+class ListingAPI(MethodView):
+    """
+    User List Resource
+    """
+
+    def get(self):
+        print("yolo1")
+        ulist = User.query.all()
+        retlist = []
+        for u in ulist:
+            retlist.append({'Email':u.email,'Registered_on':str(u.registered_on),'Admin':str(u.admin)})
+        responseObject = {
+            'status': 'success',
+            'message': retlist
+        }
+        return make_response(jsonify(responseObject)), 201
 
 # define the API resources
 registration_view = RegisterAPI.as_view('register_api')
+listing_view = ListingAPI.as_view('listing_api')
 
 # add Rules for API Endpoints
 auth_blueprint.add_url_rule(
     '/auth/register',
     view_func=registration_view,
     methods=['POST', 'GET']
+)
+auth_blueprint.add_url_rule(
+    '/users/index',
+    view_func=listing_view,
+    methods=['GET']
 )

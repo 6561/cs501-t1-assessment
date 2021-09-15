@@ -1,0 +1,264 @@
+  ERROR: Command errored out with exit status 1:
+   command: /usr/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"'; __file__='"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-_yquyfqb
+       cwd: /tmp/pip-install-7mdkit78/cffi/
+  Complete output (126 lines):
+  running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.8
+  creating build/lib.linux-x86_64-3.8/cffi
+  copying cffi/backend_ctypes.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/verifier.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/cffi_opcode.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/lock.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/setuptools_ext.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/api.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/model.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/cparser.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/vengine_gen.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/vengine_cpy.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/ffiplatform.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/recompiler.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/__init__.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/commontypes.py -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/_cffi_include.h -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/parse_c_type.h -> build/lib.linux-x86_64-3.8/cffi
+  copying cffi/_embedding.h -> build/lib.linux-x86_64-3.8/cffi
+  running build_ext
+  building '_cffi_backend' extension
+  creating build/temp.linux-x86_64-3.8
+  creating build/temp.linux-x86_64-3.8/c
+  x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DUSE__THREAD -I/usr/include/ffi -I/usr/include/libffi -I/usr/include/python3.8 -c c/_cffi_backend.c -o build/temp.linux-x86_64-3.8/c/_cffi_backend.o
+  In file included from c/_cffi_backend.c:279:
+  c/minibuffer.h: In function ‘mb_ass_slice’:
+  c/minibuffer.h:66:5: warning: ‘PyObject_AsReadBuffer’ is deprecated [-Wdeprecated-declarations]
+     66 |     if (PyObject_AsReadBuffer(other, &buffer, &buffer_len) < 0)
+        |     ^~
+  In file included from /usr/include/python3.8/Python.h:147,
+                   from c/_cffi_backend.c:2:
+  /usr/include/python3.8/abstract.h:337:17: note: declared here
+    337 | PyAPI_FUNC(int) PyObject_AsReadBuffer(PyObject *obj,
+        |                 ^~~~~~~~~~~~~~~~~~~~~
+  In file included from c/_cffi_backend.c:282:
+  c/file_emulator.h: In function ‘PyFile_AsFile’:
+  c/file_emulator.h:54:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+     54 |         mode = PyText_AsUTF8(ob_mode);
+        |              ^
+  c/_cffi_backend.c: In function ‘b_complete_struct_or_union’:
+  c/_cffi_backend.c:4331:17: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+   4331 |                 do_align = PyText_GetSize(fname) > 0;
+        |                 ^~~~~~~~
+  In file included from /usr/include/python3.8/Python.h:97,
+                   from c/_cffi_backend.c:2:
+  /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+    177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+        |                                           ^~~~~~~~~~~~~~~~~
+  c/_cffi_backend.c:4365:13: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+   4365 |             if (PyText_GetSize(fname) == 0 &&
+        |             ^~
+  In file included from /usr/include/python3.8/Python.h:97,
+                   from c/_cffi_backend.c:2:
+  /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+    177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+        |                                           ^~~~~~~~~~~~~~~~~
+  c/_cffi_backend.c:4436:17: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+   4436 |                 if (PyText_GetSize(fname) > 0) {
+        |                 ^~
+  In file included from /usr/include/python3.8/Python.h:97,
+                   from c/_cffi_backend.c:2:
+  /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+    177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+        |                                           ^~~~~~~~~~~~~~~~~
+  c/_cffi_backend.c: In function ‘b_callback’:
+  c/_cffi_backend.c:5341:5: warning: ‘ffi_prep_closure’ is deprecated: use ffi_prep_closure_loc instead [-Wdeprecated-declarations]
+   5341 |     if (ffi_prep_closure(closure, &cif_descr->cif,
+        |     ^~
+  In file included from c/_cffi_backend.c:15:
+  /usr/include/x86_64-linux-gnu/ffi.h:334:1: note: declared here
+    334 | ffi_prep_closure (ffi_closure*,
+        | ^~~~~~~~~~~~~~~~
+  In file included from /usr/include/python3.8/unicodeobject.h:1037,
+                   from /usr/include/python3.8/Python.h:97,
+                   from c/_cffi_backend.c:2:
+  c/ffi_obj.c: In function ‘_ffi_type’:
+  /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+    785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+        |                             ^~~~~~~~~~~~~~~~
+  c/_cffi_backend.c:72:25: note: in expansion of macro ‘_PyUnicode_AsString’
+     72 | # define PyText_AS_UTF8 _PyUnicode_AsString
+        |                         ^~~~~~~~~~~~~~~~~~~
+  c/ffi_obj.c:191:32: note: in expansion of macro ‘PyText_AS_UTF8’
+    191 |             char *input_text = PyText_AS_UTF8(arg);
+        |                                ^~~~~~~~~~~~~~
+  c/lib_obj.c: In function ‘lib_build_cpython_func’:
+  /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+    785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+        |                             ^~~~~~~~~~~~~~~~
+  c/_cffi_backend.c:72:25: note: in expansion of macro ‘_PyUnicode_AsString’
+     72 | # define PyText_AS_UTF8 _PyUnicode_AsString
+        |                         ^~~~~~~~~~~~~~~~~~~
+  c/lib_obj.c:129:21: note: in expansion of macro ‘PyText_AS_UTF8’
+    129 |     char *libname = PyText_AS_UTF8(lib->l_libname);
+        |                     ^~~~~~~~~~~~~~
+  c/lib_obj.c: In function ‘lib_build_and_cache_attr’:
+  /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+    785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+        |                             ^~~~~~~~~~~~~~~~
+  c/_cffi_backend.c:71:24: note: in expansion of macro ‘_PyUnicode_AsString’
+     71 | # define PyText_AsUTF8 _PyUnicode_AsString   /* PyUnicode_AsUTF8 in Py3.3 */
+        |                        ^~~~~~~~~~~~~~~~~~~
+  c/lib_obj.c:208:15: note: in expansion of macro ‘PyText_AsUTF8’
+    208 |     char *s = PyText_AsUTF8(name);
+        |               ^~~~~~~~~~~~~
+  In file included from c/cffi1_module.c:16,
+                   from c/_cffi_backend.c:6740:
+  c/lib_obj.c: In function ‘lib_getattr’:
+  c/lib_obj.c:506:7: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+    506 |     p = PyText_AsUTF8(name);
+        |       ^
+  In file included from c/cffi1_module.c:19,
+                   from c/_cffi_backend.c:6740:
+  c/call_python.c: In function ‘_get_interpstate_dict’:
+  c/call_python.c:20:30: error: dereferencing pointer to incomplete type ‘PyInterpreterState’ {aka ‘struct _is’}
+     20 |     builtins = tstate->interp->builtins;
+        |                              ^~
+  c/call_python.c: In function ‘_ffi_def_extern_decorator’:
+  c/call_python.c:73:11: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+     73 |         s = PyText_AsUTF8(name);
+        |           ^
+  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for cffi
+    ERROR: Command errored out with exit status 1:
+     command: /usr/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"'; __file__='"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-v3ia71gi/install-record.txt --single-version-externally-managed --user --prefix= --compile --install-headers /home/bartjc/.local/include/python3.8/cffi
+         cwd: /tmp/pip-install-7mdkit78/cffi/
+    Complete output (126 lines):
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-x86_64-3.8
+    creating build/lib.linux-x86_64-3.8/cffi
+    copying cffi/backend_ctypes.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/verifier.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/cffi_opcode.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/lock.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/setuptools_ext.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/api.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/model.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/cparser.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/vengine_gen.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/vengine_cpy.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/ffiplatform.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/recompiler.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/__init__.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/commontypes.py -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/_cffi_include.h -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/parse_c_type.h -> build/lib.linux-x86_64-3.8/cffi
+    copying cffi/_embedding.h -> build/lib.linux-x86_64-3.8/cffi
+    running build_ext
+    building '_cffi_backend' extension
+    creating build/temp.linux-x86_64-3.8
+    creating build/temp.linux-x86_64-3.8/c
+    x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DUSE__THREAD -I/usr/include/ffi -I/usr/include/libffi -I/usr/include/python3.8 -c c/_cffi_backend.c -o build/temp.linux-x86_64-3.8/c/_cffi_backend.o
+    In file included from c/_cffi_backend.c:279:
+    c/minibuffer.h: In function ‘mb_ass_slice’:
+    c/minibuffer.h:66:5: warning: ‘PyObject_AsReadBuffer’ is deprecated [-Wdeprecated-declarations]
+       66 |     if (PyObject_AsReadBuffer(other, &buffer, &buffer_len) < 0)
+          |     ^~
+    In file included from /usr/include/python3.8/Python.h:147,
+                     from c/_cffi_backend.c:2:
+    /usr/include/python3.8/abstract.h:337:17: note: declared here
+      337 | PyAPI_FUNC(int) PyObject_AsReadBuffer(PyObject *obj,
+          |                 ^~~~~~~~~~~~~~~~~~~~~
+    In file included from c/_cffi_backend.c:282:
+    c/file_emulator.h: In function ‘PyFile_AsFile’:
+    c/file_emulator.h:54:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+       54 |         mode = PyText_AsUTF8(ob_mode);
+          |              ^
+    c/_cffi_backend.c: In function ‘b_complete_struct_or_union’:
+    c/_cffi_backend.c:4331:17: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+     4331 |                 do_align = PyText_GetSize(fname) > 0;
+          |                 ^~~~~~~~
+    In file included from /usr/include/python3.8/Python.h:97,
+                     from c/_cffi_backend.c:2:
+    /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+      177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+          |                                           ^~~~~~~~~~~~~~~~~
+    c/_cffi_backend.c:4365:13: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+     4365 |             if (PyText_GetSize(fname) == 0 &&
+          |             ^~
+    In file included from /usr/include/python3.8/Python.h:97,
+                     from c/_cffi_backend.c:2:
+    /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+      177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+          |                                           ^~~~~~~~~~~~~~~~~
+    c/_cffi_backend.c:4436:17: warning: ‘PyUnicode_GetSize’ is deprecated [-Wdeprecated-declarations]
+     4436 |                 if (PyText_GetSize(fname) > 0) {
+          |                 ^~
+    In file included from /usr/include/python3.8/Python.h:97,
+                     from c/_cffi_backend.c:2:
+    /usr/include/python3.8/unicodeobject.h:177:43: note: declared here
+      177 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_ssize_t) PyUnicode_GetSize(
+          |                                           ^~~~~~~~~~~~~~~~~
+    c/_cffi_backend.c: In function ‘b_callback’:
+    c/_cffi_backend.c:5341:5: warning: ‘ffi_prep_closure’ is deprecated: use ffi_prep_closure_loc instead [-Wdeprecated-declarations]
+     5341 |     if (ffi_prep_closure(closure, &cif_descr->cif,
+          |     ^~
+    In file included from c/_cffi_backend.c:15:
+    /usr/include/x86_64-linux-gnu/ffi.h:334:1: note: declared here
+      334 | ffi_prep_closure (ffi_closure*,
+          | ^~~~~~~~~~~~~~~~
+    In file included from /usr/include/python3.8/unicodeobject.h:1037,
+                     from /usr/include/python3.8/Python.h:97,
+                     from c/_cffi_backend.c:2:
+    c/ffi_obj.c: In function ‘_ffi_type’:
+    /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+      785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+          |                             ^~~~~~~~~~~~~~~~
+    c/_cffi_backend.c:72:25: note: in expansion of macro ‘_PyUnicode_AsString’
+       72 | # define PyText_AS_UTF8 _PyUnicode_AsString
+          |                         ^~~~~~~~~~~~~~~~~~~
+    c/ffi_obj.c:191:32: note: in expansion of macro ‘PyText_AS_UTF8’
+      191 |             char *input_text = PyText_AS_UTF8(arg);
+          |                                ^~~~~~~~~~~~~~
+    c/lib_obj.c: In function ‘lib_build_cpython_func’:
+    /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+      785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+          |                             ^~~~~~~~~~~~~~~~
+    c/_cffi_backend.c:72:25: note: in expansion of macro ‘_PyUnicode_AsString’
+       72 | # define PyText_AS_UTF8 _PyUnicode_AsString
+          |                         ^~~~~~~~~~~~~~~~~~~
+    c/lib_obj.c:129:21: note: in expansion of macro ‘PyText_AS_UTF8’
+      129 |     char *libname = PyText_AS_UTF8(lib->l_libname);
+          |                     ^~~~~~~~~~~~~~
+    c/lib_obj.c: In function ‘lib_build_and_cache_attr’:
+    /usr/include/python3.8/cpython/unicodeobject.h:785:29: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+      785 | #define _PyUnicode_AsString PyUnicode_AsUTF8
+          |                             ^~~~~~~~~~~~~~~~
+    c/_cffi_backend.c:71:24: note: in expansion of macro ‘_PyUnicode_AsString’
+       71 | # define PyText_AsUTF8 _PyUnicode_AsString   /* PyUnicode_AsUTF8 in Py3.3 */
+          |                        ^~~~~~~~~~~~~~~~~~~
+    c/lib_obj.c:208:15: note: in expansion of macro ‘PyText_AsUTF8’
+      208 |     char *s = PyText_AsUTF8(name);
+          |               ^~~~~~~~~~~~~
+    In file included from c/cffi1_module.c:16,
+                     from c/_cffi_backend.c:6740:
+    c/lib_obj.c: In function ‘lib_getattr’:
+    c/lib_obj.c:506:7: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+      506 |     p = PyText_AsUTF8(name);
+          |       ^
+    In file included from c/cffi1_module.c:19,
+                     from c/_cffi_backend.c:6740:
+    c/call_python.c: In function ‘_get_interpstate_dict’:
+    c/call_python.c:20:30: error: dereferencing pointer to incomplete type ‘PyInterpreterState’ {aka ‘struct _is’}
+       20 |     builtins = tstate->interp->builtins;
+          |                              ^~
+    c/call_python.c: In function ‘_ffi_def_extern_decorator’:
+    c/call_python.c:73:11: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+       73 |         s = PyText_AsUTF8(name);
+          |           ^
+    error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: /usr/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"'; __file__='"'"'/tmp/pip-install-7mdkit78/cffi/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-v3ia71gi/install-record.txt --single-version-externally-managed --user --prefix= --compile --install-headers /home/bartjc/.local/include/python3.8/cffi Check the logs for full command output.
