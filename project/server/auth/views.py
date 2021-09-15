@@ -65,7 +65,6 @@ class ListingAPI(MethodView):
     """
 
     def get(self):
-        print("yolo1")
         ulist = User.query.all()
         retlist = []
         for u in ulist:
