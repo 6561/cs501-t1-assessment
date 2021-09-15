@@ -1,4 +1,4 @@
-web: flask run manage:app
+web: flask run
 heroku ps:scale web=1
 
 
