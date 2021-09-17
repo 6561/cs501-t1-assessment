@@ -1,9 +1,9 @@
 import requests
 
-url = 'http://127.0.0.1:8000/auth/register'
+url = 'https://cs501a1-api-heroku.herokuapp.com/auth/register'
 obj = {
-    'email':'her@oku.com',
-    'password':'YeahHerokuuu',
+    'email':'coolcat@cheese.com',
+    'password':'my12345678',
 }
 
 x=requests.post(url, json = obj)
