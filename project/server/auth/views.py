@@ -70,6 +70,7 @@ class ListingAPI(MethodView):
     def get(self):
         print("TRYING UP IN HERE")
         ulist = User.query.all()
+        print("TRYING 2")
         retlist = []
         for u in ulist:
             retlist.append({'Email':u.email,'Registered_on':str(u.registered_on),'Admin':str(u.admin)})

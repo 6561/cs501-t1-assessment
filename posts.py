@@ -2,7 +2,7 @@ import requests
 
 url = 'https://cs501a1-api-heroku.herokuapp.com/auth/register'
 obj = {
-    'email':'coolcat@cheese.com',
+    'email':'coolcath@cheese.com',
     'password':'my12345678',
 }
 
