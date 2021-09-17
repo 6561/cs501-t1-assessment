@@ -1,10 +1,14 @@
 import jwt
 import datetime
 
-from project.server import app, db, bcrypt
+from project.server import app, db, engine, bcrypt
+from sqlalchemy.orm import sessionmaker
+frm sqlalchemy.ext.declarative import declarative_base
 
+Base = declarative_base()
+Base.metadata.bind=engine
 
-class User(db.Model):
+class User(Base):
     """ User Model for storing user related details """
     __tablename__ = "users"
 
@@ -55,3 +59,4 @@ class User(db.Model):
             return 'Signature expired. Please log in again.'
         except jwt.InvalidTokenError:
             return 'Invalid token. Please log in again.'
+Base.metadata.create_all(engine)

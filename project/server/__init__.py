@@ -20,6 +20,8 @@ from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+from sqlalchemy import create_engine
+
 app = Flask(__name__)
 
 app_settings = os.getenv(
@@ -27,6 +29,8 @@ app_settings = os.getenv(
     'project.server.config.ProductionConfig'
 )
 app.config.from_object(app_settings)
+
+engine = create_engine('postgres://sgbuguiryacoda:a869c2eb1ff0fa6c5a118a5d95b70a6faa9db86d0e649dca0f1a905b69ca5b95@ec2-44-198-100-81.compute-1.amazonaws.com:5432/d8fphn9gmdhv7n')
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)

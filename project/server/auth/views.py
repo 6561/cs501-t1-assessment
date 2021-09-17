@@ -47,6 +47,9 @@ class RegisterAPI(MethodView):
            
                 return make_response(jsonify(responseObject)), 201
             except Exception as e:
+                print("THIS IS e")
+                print(e)
+                print("THAT WAS e")
                 responseObject = {
                     'status': 'fail',
                     'message': 'Some error occurred. Please try again.'
@@ -65,6 +68,7 @@ class ListingAPI(MethodView):
     """
 
     def get(self):
+        print("TRYING UP IN HERE")
         ulist = User.query.all()
         retlist = []
         for u in ulist:
