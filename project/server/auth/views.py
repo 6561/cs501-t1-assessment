@@ -72,6 +72,9 @@ class ListingAPI(MethodView):
         ulist = User.query.all()
         print("TRYING 2")
         retlist = []
+        print("RETLIST LENGTH")
+        print(retlist.length)
+        print("it was that")
         for u in ulist:
             retlist.append({'Email':u.email,'Registered_on':str(u.registered_on),'Admin':str(u.admin)})
         responseObject = {
