@@ -3,7 +3,7 @@ import datetime
 
 from project.server import app, db, engine, bcrypt
 from sqlalchemy.orm import sessionmaker
-frm sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 Base.metadata.bind=engine
