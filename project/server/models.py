@@ -2,7 +2,7 @@ import jwt
 import datetime
 
 from project.server import app, db, engine, bcrypt
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 
 db_session = scoped_session(sessionmaker(autocommit=False,
