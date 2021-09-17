@@ -32,4 +32,4 @@ class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'a869c2eb1ff0fa6c5a118a5d95b70a6faa9db86d0e649dca0f1a905b69ca5b95'
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = postgres_local_base + database_name
+    SQLALCHEMY_DATABASE_URI = f"sqlite:///{os.path.join(os.path.dirname(__file__), os.path.pardir, f'{database_name}.sqlite')}"
